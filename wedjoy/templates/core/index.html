@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+{% load static %}
+{%block content %}
+
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <span class="hero-badge" id="hero-badge">
+            Connecting Communities & Empowering Local Life
+        </span>
+
+        <h1 id="hero-title">
+            Connect with Your <br>
+            <span>Local Community</span>
+        </h1>
+
+        <p class="hero-subtext" id="hero-text">
+            Discover inspiring events, support local businesses, and make a difference
+            through meaningful volunteer opportunities.
+        </p>
+    </div>
+</section>
+
+<section class="events-section" style="background:#fff">
+    <div class="container">
+<div class="section-header">
+            <h2>Discover What's Happening Nearby</h2> <br>
+            <a href="#" class="see-all">See all events</a>
+        </div>
+        <p class="Card_p">From fitness classes to farmers markets, find activities that bring your community together.</p>
+
+        <div class="events-grid">
+
+            <!-- CARD 1 -->
+            <div class="event-card">
+                <div class="image-wrapper">
+                    <img src="{% static 'images/yoga.jpg' %}" alt="">
+                </div>
+
+                <div class="card-content">
+                    <span class="category">Wellness</span>
+                    <h3>Morning Yoga in the Park</h3>
+                    <div class="meta">
+                        <p><img src="{% static 'images/calendar.png' %}" style="width:5%"> Sat, Jan 27 · 7:00 AM</p>
+                        <p> <img src="{% static 'images/pin.png' %}" style="width:6%">  Central Park <img src="{% static 'images/people.png' %}" style="width:6%;margin-left:5%"> 24 attending</p>
+                    </div>
+                    <button class="rsvp-btn">RSVP Now</button>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="event-card">
+                <div class="image-wrapper">
+                    <img src="{% static 'images/FarmersMarket.jpg' %}" alt="">
+                </div>
+
+                <div class="card-content">
+                    <span class="category">Community</span>
+                    <h3>Farmers Market Weekend</h3>
+                      <div class="meta">
+                        <p><img src="{% static 'images/calendar.png' %}" style="width:5%"> Sun, Jan 28 · 8:00 AM</p>
+                        <p> <img src="{% static 'images/pin.png' %}" style="width:6%">  Downtown Square  <img src="{% static 'images/people.png' %}" style="width:6%;margin-left:5%"> 150 attending</p>
+                    </div>
+                    <button class="rsvp-btn">RSVP Now</button>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="event-card">
+                <div class="image-wrapper">
+                    <img src="{% static 'images/cleanup.jpg' %}" alt="">
+                </div>
+
+                <div class="card-content">
+                    <span class="category">Volunteer</span>
+                    <h3>Community Park Cleanup</h3>
+
+                    <div class="meta">
+                        <p><img src="{% static 'images/calendar.png' %}" style="width:5%"> Sat, Feb 3 · 9:00 AM</p>
+                        <p> <img src="{% static 'images/pin.png' %}" style="width:6%"> Riverside Park  <img src="{% static 'images/people.png' %}" style="width:6%;margin-left:5%"> 45 attending   </p>
+                    </div>
+
+                    <button class="rsvp-btn">RSVP Now</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- About Section...   -->
+
+
+<div class="p1">
+  <center><div><img src="{% static 'images/pins.png' %}" style="margin-top:5%" height="70" width="70"></div>
+  <h1 align="center" style="font-family:Times New Roman,Times,serif;">Bringing Your Local Community<span style="color:#00211d;"> Closer Than Ever</span> </h1><br>
+  <p class="pe">At Wedjoy, we believe strong communities create stronger lives. Discover exciting local events, meaningful volunteering opportunities, <br>and trusted neighborhood businesses — all in one thoughtfully designed platform. Whether you’re looking to connect, <br>contribute, or grow, Wedjoy makes it easier to engage with the people and places that shape your community.
+  <br><br>
+      <a href="#" class="pbtn-login">Explore</a>
+</p><br>
+</div></center><br><br>
+
+<!-- Business Section...   -->
+<section class="business-section" style="background:#fff">
+  <div class="container">
+
+    <!-- TOP HEADER -->
+    <div class="top-row">
+
+      <div class="left">
+        <h1>Support Your Neighborhood</h1>
+
+        <p class="subtitle2">
+          Discover local gems, from cozy cafés to fitness studios. 
+          Every purchase supports your community.
+        </p>
+      </div>
+
+      <div class="right">
+        <a href="#" class="browse-btn">
+          Browse All Businesses
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards-grid">
+
+      <!-- CARD 1 -->
+      <div class="business-card">
+
+        <div class="image-wrapper">
+          <img src="{% static 'images/cafe.jpg' %}" alt="">
+        </div>
+
+        <div class="card-content">
+
+          <div class="top-meta">
+            <span class="category">Coffee & Bakery</span>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              4.8 <span>(124)</span>
+            </div>
+          </div>
+
+          <h3>The Corner Café</h3>
+
+          <div class="bottom-meta">
+            <p><img src="{% static 'images/pin.png' %}" style="width:10%">0.3 mi</p>
+            <p><img src="{% static 'images/clock.png' %}" style="width:10%"> Open until 8 PM</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="business-card">
+
+        <div class="image-wrapper">
+          <img src="{% static 'images/gardenCenter.jpg' %}" alt="">
+        </div>
+
+        <div class="card-content">
+
+          <div class="top-meta">
+            <span class="category">Plants & Garden</span>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              4.9 <span>(89)</span>
+            </div>
+          </div>
+
+          <h3>Green Thumb Garden Center</h3>
+
+          <div class="bottom-meta">
+            <p><img src="{% static 'images/pin.png' %}" style="width:10%"> 0.7 mi</p>
+            <p><img src="{% static 'images/clock.png' %}" style="width:10%"> Open until 6 PM</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="business-card">
+
+        <div class="image-wrapper">
+          <img src="{% static 'images/gym.jpg' %}" alt=""> 
+        </div>
+
+        <div class="card-content">
+
+          <div class="top-meta">
+            <span class="category">Gym & Wellness</span>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              4.7 <span>(203)</span>
+            </div>
+          </div>
+
+          <h3>Riverside Fitness Studio</h3>
+
+          <div class="bottom-meta">
+            <p><img src="{% static 'images/pin.png' %}" style="width:10%">0.5 mi</p>
+            <p><img src="{% static 'images/clock.png' %}" style="width:10%"><span style="padding-left:2%">Open until 10 PM</span></p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <p class="tag">SIMPLE & EASY</p>
+    <h2 class="title">How It Works</h2>
+    <p class="subtitle">
+      Getting involved in your neighborhood takes just three simple steps.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="icon-wrapper">
+          <div class="step-number">01</div>
+          <i class="icon"></i>
+        </div>
+        <h3>Explore Your Community</h3>
+        <p>Browse local events, discover nearby businesses, and find volunteer opportunities happening right around you.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon-wrapper">
+          <div class="step-number">02</div>
+          <i class="icon"></i>
+        </div>
+        <h3>Join & Participate</h3>
+        <p>RSVP to events, support local shops, and sign up for causes you care about — all in one place.</p>
+      </div>
+
+      <div class="step">
+        <div class="icon-wrapper">
+          <div class="step-number">03</div>
+          <i class="icon"></i>
+        </div>
+        <h3>Connect & Grow Together</h3>
+        <p>Build lasting relationships with neighbors, business owners, and organizers who share your passion for community.</p>
+      </div>
+    </div>
+
+    <a href="#" class="Pbtn-login">Get Started Now</a>
+  </div>
+</section>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hero = document.querySelector(".hero");
+    const heroTitle = document.getElementById("hero-title");
+    const heroText = document.getElementById("hero-text");
+
+    const slides = [
+        {
+            image: "{% static 'images/community1.jpg' %}",
+            title: "Connect with Your <br><span>Local Community</span>",
+            text: "Discover inspiring events, support local businesses, and make a difference through meaningful volunteer opportunities."
+        },
+        {
+            image: "{% static 'images/community2.jpg' %}",
+            title: "Discover Amazing <br><span>Local Events</span>",
+            text: "From festivals to workshops, find exciting events happening right in your neighborhood."
+        },
+        {
+            image: "{% static 'images/community3.jpg' %}",
+            title: "Support & Grow <br><span>Local Businesses</span>",
+            text: "Explore trusted neighborhood businesses and help your local economy thrive."
+        },
+        {
+            image: "{% static 'images/community4.jpg' %}",
+            title: "Make an Impact <br> Through <span>Volunteering</span>",
+            text: "Join meaningful volunteer opportunities and create real change in your community."
+        }
+    ];
+
+    let current = 0;
+
+    function changeSlide() {
+
+        heroTitle.classList.remove("show-text");
+        heroText.classList.remove("show-text");
+
+        setTimeout(() => {
+            current = (current + 1) % slides.length;
+
+            hero.style.backgroundImage = `url('${slides[current].image}')`;
+            heroTitle.innerHTML = slides[current].title;
+            heroText.innerHTML = slides[current].text;
+
+            heroTitle.classList.add("show-text");
+            heroText.classList.add("show-text");
+
+        }, 400);
+    }
+
+    hero.style.backgroundImage = `url('${slides[0].image}')`;
+    heroTitle.classList.add("show-text");
+    heroText.classList.add("show-text");
+
+    setInterval(changeSlide, 5000);
+});
+</script>
+
+
+
+ {% endblock content %}
+
+

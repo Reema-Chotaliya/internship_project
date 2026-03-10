@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background:#f6f8f7;
+}
+
+
+.dashboard-container {
+    display: flex;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar {
+    width: 240px;
+    background: #ffffff;
+    height: 100vh;
+    padding: 25px 20px;
+    border-right: 1px solid #e0e0e0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav li {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Hover Effect */
+.nav li:hover {
+    background: #ffd3acc4;
+    transform: translateX(5px);
+}
+
+/* Active Menu */
+.nav .active {
+    background: #ffd3acc4;
+    font-weight: 500;
+    border-left: 4px ;
+    padding-left: 11px;
+}
+
+/* Icon Styling */
+.nav li i {
+    font-size: 16px;
+    width: 20px;
+    transition: 0.3s;
+}
+
+.nav li:hover i {
+    color: #7b4b2a;
+}
+
+.nav .active i {
+    color: #7b4b2a;
+}
+
+/* Logout Menu */
+
+.logout-menu {
+    color: #c0392b;
+    font-weight: 500;
+}
+
+.logout-menu:hover {
+    background: #ffe5e5;
+    transform: translateX(5px);
+}
+
+.logout-menu i {
+    color: #c0392b;
+}
+
+.logout-menu:hover i {
+    color: #e74c3c;
+}
+
+/* Back Link */
+.back-link {
+    margin-top: auto;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-link:hover {
+    color: #7b4b2a;
+}
+
+/* Push Back link to bottom */
+.back-link {
+    margin-top: auto;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    padding-top: 15px;
+}
+
+.back-link:hover {
+    color: #1c7c54;
+}
+
+/* ================= Main Content ================= */
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+}
+
+/* ================= Top Bar ================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.create-btn {
+    background: #7b4b2a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+    background: #5c3620;
+    transform: translateY(-2px);
+}
+/* ================= 3D Stats Cards ================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+/* ================= Modern Typical Shadow Stats Cards ================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    /* Typical Clean Shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Circle */
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background: #7b4b2a;
+    color: white;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    box-shadow: 0 4px 10px rgba(123, 75, 42, 0.3);
+}
+
+/* Text */
+.card-info h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Icon Circle */
+.card-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(145deg, #7b4b2a, #5c3620);
+    color: white;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    box-shadow: 0 8px 15px rgba(123,75,42,0.4);
+}
+
+/* Text Section */
+.card-info h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* ================= Events Section ================= */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-header a {
+    text-decoration: none;
+    color: #1c7c54;
+    font-weight: 500;
+}
+
+.section-header a:hover {
+    text-decoration: underline;
+}
+
+/* ================= Event Card ================= */
+
+.events-section {
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    padding: 30px;
+    border-radius: 25px;
+
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.08),
+                -10px -10px 25px rgba(255,255,255,0.9);
+
+    margin-top: 20px;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.event-card h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.event-card p {
+    font-size: 13px;
+    color: #777;
+}
+
+
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-header h3 {
+    font-size: 20px;
+}
+
+.section-header a {
+    text-decoration: none;
+    color: #7b4b2a;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.section-header a:hover {
+    text-decoration: underline;
+}
+
+/* ================= Badges ================= */
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.published {
+    background: #d4f5e9;
+    color: #1c7c54;
+}
+
+.draft {
+    background: #e5e5e5;
+    color: #555;
+}
+
+/* ================= Progress Bar ================= */
+
+.progress-box {
+    width: 200px;
+    text-align: right;
+}
+
+.progress-box span {
+    font-size: 12px;
+}
+
+/* 3D Event Card */
+.event-card {
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    padding: 20px 25px;
+    border-radius: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    box-shadow: 6px 6px 18px rgba(0,0,0,0.07),
+                -6px -6px 18px rgba(255,255,255,0.9);
+
+    transition: all 0.3s ease;
+}
+
+/* ================= Modern Animated Progress Bar ================= */
+
+.progress {
+    height: 10px;
+    background: #ececec;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-top: 8px;
+    position: relative;
+}
+
+/* Main Bar */
+.progress-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #7b4b2a,
+        #c08a5d,
+        #7b4b2a
+    );
+
+    background-size: 200% 100%;
+
+    animation: fillBar 1.8s ease forwards,
+               gradientMove 3s linear infinite,
+               pulseGlow 2s ease-in-out infinite;
+
+    box-shadow: 0 0 10px rgba(123, 75, 42, 0.4);
+}
+
+/* Fill Animation */
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+/* Moving Gradient Effect */
+@keyframes gradientMove {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Soft Glow Pulse */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 8px rgba(123,75,42,0.4); }
+    50% { box-shadow: 0 0 18px rgba(123,75,42,0.7); }
+}
+
+/* Hover 3D Lift */
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.12),
+                -10px -10px 25px rgba(255,255,255,1);
+}
+
+/* Event Title */
+.event-card h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.event-card p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Badges */
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.published {
+    background: #d4f5e9;
+    color: #1c7c54;
+}
+
+.draft {
+    background: #ffe5e5;
+    color: #c0392b;
+}
+
+/* Progress Box */
+.progress-box {
+    width: 220px;
+    text-align: right;
+}
+
+.progress-box span {
+    font-size: 12px;
+}
+
+/* 3D Progress Bar */
+.progress {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #7b4b2a, #c08a5d);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}

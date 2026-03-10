@@ -1,0 +1,280 @@
+{% extends 'localcommunity/eventstudio/baseevent.html' %}
+
+
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Studio | Dashboard</title>
+
+    <!-- CSS Link According To Your Structure -->
+    <link rel="stylesheet" href="{% static 'css/eventstudio.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+<aside class="sidebar">
+    <div class="logo">Event Studio</div>
+
+    <ul class="nav">
+        <li class="active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </li>
+
+        <li>
+            <i class="fa-solid fa-calendar-days"></i>
+            My Events
+        </li>
+
+        <li>
+            <i class="fa-solid fa-plus"></i>
+            Create Event
+        </li>
+
+        <li>
+            <i class="fa-solid fa-users"></i>
+            Attendees
+        </li>
+
+        <li>
+            <i class="fa-solid fa-chart-line"></i>
+            Analytics
+        </li>
+
+        <li>
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </li>
+    </ul>
+
+    <div class="back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Main Site
+    </div>
+</aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <div class="topbar">
+            <h1>Welcome back, Sarah 🎉</h1>
+            <button class="create-btn">+ Create Event</button>
+        </div>
+
+<!-- Stats Cards -->
+<div class="stats-grid">
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <div class="card-info">
+            <h2>12</h2>
+            <p>Total Events</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="card-info">
+            <h2>1,240</h2>
+            <p>Total RSVPs</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="card-info">
+            <h2>85%</h2>
+            <p>Avg Attendance</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-comments"></i>
+        </div>
+        <div class="card-info">
+            <h2>342</h2>
+            <p>Comments</p>
+        </div>
+    </div>
+
+</div>
+        <!-- Upcoming Events -->
+        <div class="events-section">
+            <div class="section-header">
+                <h3>Upcoming Events</h3>
+                <a href="#">View All →</a>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h4>Community Yoga in the Park</h4>
+                    <span class="badge published">Published</span>
+                    <p>Feb 28, 2026 at 8:00 AM</p>
+                </div>
+                <div class="progress-box">
+                    <span>45/60 RSVPs</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:75%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h4>Local Artisan Market</h4>
+                    <span class="badge published">Published</span>
+                    <p>Mar 5, 2026 at 10:00 AM</p>
+                </div>
+                <div class="progress-box">
+                    <span>180/200 RSVPs</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:90%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h4>Neighborhood Cleanup Drive</h4>
+                    <span class="badge draft">Draft</span>
+                    <p>Mar 12, 2026 at 9:00 AM</p>
+                </div>
+                <div class="progress-box">
+                    <span>32/50 RSVPs</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:64%;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html> {% endcomment %}
+
+
+
+
+{% block content %}
+
+<!-- Top Bar -->
+<div class="topbar">
+    <h1>Welcome back, Sarah 🎉</h1>
+    <button class="create-btn">+ Create Event</button>
+</div>
+   
+<!-- Stats Cards -->
+<div class="stats-grid">
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <div class="card-info">
+            <h2>12</h2>
+            <p>Total Events</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-users"></i>
+        </div>
+        <div class="card-info">
+            <h2>1,240</h2>
+            <p>Total RSVPs</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="card-info">
+            <h2>85%</h2>
+            <p>Avg Attendance</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">
+            <i class="fa-solid fa-comments"></i>
+        </div>
+        <div class="card-info">
+            <h2>342</h2>
+            <p>Comments</p>
+        </div>
+    </div>
+
+</div>
+
+  <!-- Upcoming Events -->
+        <div class="events-section">
+            <div class="section-header">
+                <h3>Upcoming Events</h3>
+                <a href="#">View All →</a>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h4>Community Yoga in the Park</h4>
+                    <span class="badge published">Published</span>
+                    <p>Feb 28, 2026 at 8:00 AM</p>
+                </div>
+                <div class="progress-box">
+                    <span>45/60 RSVPs</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:75%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h4>Local Artisan Market</h4>
+                    <span class="badge published">Published</span>
+                    <p>Mar 5, 2026 at 10:00 AM</p>
+                </div>
+                <div class="progress-box">
+                    <span>180/200 RSVPs</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:90%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h4>Neighborhood Cleanup Drive</h4>
+                    <span class="badge draft">Draft</span>
+                    <p>Mar 12, 2026 at 9:00 AM</p>
+                </div>
+                <div class="progress-box">
+                    <span>32/50 RSVPs</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:64%;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+{% endblock %}

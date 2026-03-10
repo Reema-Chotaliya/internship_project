@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Studio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/eventstudio.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+
+<aside class="sidebar">
+    <div class="logo">Event Studio</div>
+<ul class="nav">
+    <li>
+        <a href="{% url 'localcommunity:eventstudiodashboard' %}" style="text-decoration:none; color:#4B0F12; ">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </li>
+
+    <li>
+        <a href="{% url 'localcommunity:myevents' %}" style="text-decoration:none; color:#4B0F12;">
+        <i class="fa-solid fa-calendar-days"></i>
+        My Events
+    </li>
+
+    <li>
+        <a href="{% url 'localcommunity:createevent' %}" style="text-decoration:none; color:#4B0F12;">
+        <i class="fa-solid fa-plus"></i>
+        Create Event
+    </li>
+
+    <li>
+        <a href="{% url 'localcommunity:attendeesevent' %}" style="text-decoration:none; color:#4B0F12;">
+        <i class="fa-solid fa-users"></i>
+        Attendees
+    </li>
+
+    <li>
+        <a href="{% url 'localcommunity:analyticsevent' %}" style="text-decoration:none; color:#4B0F12;">
+        <i class="fa-solid fa-chart-line"></i>
+        Analytics
+    </li>
+
+    <li>
+        <a href="{% url 'localcommunity:settingsevent' %}" style="text-decoration:none; color:#4B0F12;">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </li>
+
+    <!-- Logout -->
+    <li class="logout-menu">
+        <a href="{% url 'localcommunity:logoutevent' %}" style="text-decoration:none; color:#4B0F12;">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </li>
+</ul>
+
+
+    <div class="back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Main Site
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+
+    
+        <!-- Top Bar -->
+        <div class="topbar">
+            <h1>Welcome back, Sarah 🎉</h1>
+           
+        </div>
+
+{% block content %}
+{% endblock %}
+
+</main>
+
+</div>
+
+</body>
+</html>

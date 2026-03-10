@@ -1,0 +1,120 @@
+{% extends 'localcommunity/businessowner/basebusiness.html' %}
+
+
+
+{% block content %}
+{% load static %}
+
+<div class="business-header">
+
+
+<div class="business-title">
+    <h1>My Businesses</h1>
+    <p>Manage and monitor all your business listings.</p>
+</div>
+
+<div class="topbar">
+    <button class="create-btn">+ Add Business</button>
+</div>
+
+
+</div>
+
+<div class="business-container">
+
+
+<!-- Business Card 1 -->
+<div class="business-card">
+
+    <div class="business-image">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="">
+    </div>
+
+    <div class="business-details">
+
+        <div class="business-header">
+            <h3>Golden Crust Bakery <span class="status active">Active</span></h3>
+            <div class="menu">⋮</div>
+        </div>
+
+        <p class="location">📍 123 Main St • Food & Drink</p>
+
+        <div class="business-stats">
+            ⭐ <strong>4.8</strong> (124 reviews)
+            <span class="views">👁 5,200 views</span>
+        </div>
+
+        <div class="business-actions">
+            <button class="edit-btn">✏ Edit</button>
+            <button class="remove-btn">🗑 Remove</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Business Card 2 -->
+<div class="business-card">
+
+    <div class="business-image">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f" alt="">
+    </div>
+
+    <div class="business-details">
+
+        <div class="business-header">
+            <h3>Metro Fitness Studio <span class="status active">Active</span></h3>
+            <div class="menu">⋮</div>
+        </div>
+
+        <p class="location">📍 456 Oak Ave • Health & Fitness</p>
+
+        <div class="business-stats">
+            ⭐ <strong>4.5</strong> (89 reviews)
+            <span class="views">👁 3,800 views</span>
+        </div>
+
+        <div class="business-actions">
+            <button class="edit-btn">✏ Edit</button>
+            <button class="remove-btn">🗑 Remove</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Business Card 3 -->
+<div class="business-card">
+
+    <div class="business-image">
+        <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a" alt="">
+    </div>
+
+    <div class="business-details">
+
+        <div class="business-header">
+            <h3>Green Thumb Gardens <span class="status pending">Pending</span></h3>
+            <div class="menu">⋮</div>
+        </div>
+
+        <p class="location">📍 789 Elm Blvd • Home & Garden</p>
+
+        <div class="business-stats">
+            ⭐ <strong>N/A</strong> (0 reviews)
+            <span class="views">👁 120 views</span>
+        </div>
+
+        <div class="business-actions">
+            <button class="edit-btn">✏ Edit</button>
+            <button class="remove-btn">🗑 Remove</button>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% load static %}
+<nav class="navbar" id="navbar">
+   <!-- LOGO IMAGE -->
+  <div class="logo">
+      <img  id="navLogo" src="{% static 'images/logo.png' %}" alt="LinkUp Logo">
+  </div>
+
+
+  <ul class="nav-links">
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Businesses</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#">Volunteer</a></li>
+    <li><a href="#">AboutUs</a></li>
+  </ul>
+
+  <div class="nav-buttons">
+    <a href="{% url 'login' %}" class="btn-login">Login</a>
+    <a href="#" class="btn-signup">Join Now</a>
+  </div>
+</nav>
+
+
+<script>
+window.addEventListener("scroll", function() {
+
+  const navbar = document.getElementById("navbar");
+  const logo = document.getElementById("navLogo");
+
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+    logo.src = "{% static 'images/logo1.png' %}";
+  } else {
+    navbar.classList.remove("scrolled");
+    logo.src = "{% static 'images/logo.png' %}";
+  }
+
+});
+</script>
+

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body class="signup-body">
+
+<div class="container">
+    <div class="card">
+
+        <!-- LEFT SIDE -->
+        <div class="left-panel">
+           <a href=""> <img src="{% static 'images/home.png' %}"  alt="home Image" style="margin-top:-10%"></a>
+            <h2>Welcome back</h2>
+            <p class="subtitle">Sign in to continue to your community</p>
+
+            <form method="post">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}">
+                            {{ field.label }}
+                        </label>
+
+                        {{ field }}
+
+                        {% if field.errors %}
+                            <small class="error">
+                                {{ field.errors|striptags }}
+                            </small>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                <button type="submit" class="submit-btn">Sign In</button>
+
+                <p class="login-link">
+                    Already have an account?
+                    <a href="{% url 'signup' %}">SignUp</a>
+                </p>
+            </form>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-panel">
+            <img src="{% static 'images/login.jpg' %}" alt="Signup Image">
+
+
+        <div class="glass-box">
+            <p>Discover events, support local businesses, volunteer, and build meaningful connections in your neighborhood.</p>
+        </div>
+        <div class="imageText"> 
+              <h3>Connect with your <br> local community</h3>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

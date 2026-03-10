@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="signup-body">
+
+<div class="overlay" >
+    <div style="margin-top:2%;margin-left:5%" class="form-container">
+
+        <h2 class="form-title">Create Account</h2>
+        <p class="form-subtitle">Sign up to join our creative network</p>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="form-grid">
+                {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}">
+                            {{ field.label }}
+                        </label>
+
+                        {{ field }}
+
+                        {% if field.errors %}
+                            <small class="error">
+                                {{ field.errors|striptags }}
+                            </small>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Create Account
+            </button>
+
+            <p class="login-link">
+                Already have an account?
+                <a href="{% url 'login' %}">Login</a>
+            </p>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
+

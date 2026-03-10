@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Hub - navbar</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/businessowner.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="brand">Business Hub</h2>
+
+        <ul class="nav">
+            <li>
+                <a href="{% url 'localcommunity:businessownerdashboard' %}" style="text-decoration:none; color:#4B0F12;" >
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li>
+                <a href="{% url 'localcommunity:mybusinesses' %}" style="text-decoration:none; color:#4B0F12; margin-left: -5%;" >
+                <i class="fa-solid fa-briefcase"></i>
+                <span>My Businesses</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'localcommunity:addbusiness' %}" style="text-decoration:none; color:#4B0F12;">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add Business</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'localcommunity:reviews' %}" style="text-decoration:none; color:#4B0F12;">
+                <i class="fa-solid fa-star"></i>
+                <span>Reviews</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'localcommunity:analyticsbusiness' %}" style ="text-decoration:none; color:#4B0F12;">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>  
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'localcommunity:settingsbusiness' %}" style="text-decoration:none; color:#4B0F12;">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+                </a>
+            </li>
+
+            <li class="logout-item">
+                <a href="{% url 'localcommunity:logoutbusiness' %}" style="text-decoration:none; color:#4B0F12;">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <div class="topbar">
+            <div class="user-profile">
+                <span class="avatar">A</span>
+                <span class="username">Alex Johnson</span>
+            </div>
+        </div>
+
+        <!-- Dynamic Page Content -->
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+</div>
+
+
+</body>
+</html>
