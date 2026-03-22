@@ -7,4 +7,11 @@ urlpatterns = [
     path('signup/',views.userSignupView,name='signup'),
     path('login/',views.userLoginView,name='login'),
     path('logout/',views.custom_logout, name='logout'),
+    
+    path('userregisteredevents/',views.userregisteredevents, name='userregisteredevents'),
+    path('uservolunteering/',views.uservolunteering, name='uservolunteering'),
+    path('usercomments/',views.usercomments, name='usercomments'),
+    path('usersecurity/',views.usersecurity, name='usersecurity'),
+    path('userupdateprofile/',views.userupdateprofile, name='userupdateprofile'),
+    
 ]

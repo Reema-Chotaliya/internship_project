@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth import get_user_model        # ---- user profile comments table or model -------
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -71,3 +72,16 @@ class User(AbstractBaseUser):
     
     def __str__(self):
         return self.email
+    
+    
+# ---- user profile comments table or model -------
+
+User = get_user_model()
+
+class UserPost(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.content[:100]

@@ -1,0 +1,43 @@
+{% extends 'core/baseUserProfile.html' %}
+
+
+
+
+{% block content %}
+{% load static %}
+
+<h1 style="margin-top:40px; margin-bottom:40px;"> <center> Security </center> </h1>
+
+
+<div class="glass-container" style="background: #ffffff">
+
+    <h2 class="form-title"><center> Update Profile </center></h2>
+
+    <form method="POST" class="glass-form">
+        {% csrf_token %}
+    
+  
+        <div class="form-group">
+            <label>Current Password</label>
+            {{ form.current_password }}
+        </div>
+
+        <div class="form-group">
+            <label>New Password</label>
+            {{ form.new_password }}
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            {{ form.confirm_password }}
+        </div>          
+
+
+        <button type="submit" class="btn-glow">Update</button>
+
+    </form>
+
+
+</div>
+
+{% endblock content %}

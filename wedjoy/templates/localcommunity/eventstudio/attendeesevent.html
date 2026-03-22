@@ -1,10 +1,170 @@
 {% extends 'localcommunity/eventstudio/baseevent.html' %}
-
-
-
-
 {% block content %}
+{% load static %}
 
-<h1>Analytics events</h1>
 
-{% endblock content %}
+
+<div class="attendees-container">
+
+    <!-- Header -->
+    <div class="attendees-header">
+        <div>
+            <h1>Attendees</h1>
+            <p>Manage RSVPs across all your events.</p>
+        </div>
+
+        <div class="header-buttons">
+            <button class="btn">
+                <i class="fas fa-envelope"></i> Email All
+            </button>
+            <button class="btn">
+                <i class="fas fa-download"></i> Export
+            </button>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+        <!-- Confirmed -->
+        <div class="card">
+            <div class="icon green">
+                <i class="fas fa-check"></i>
+            </div>
+            <div>
+                <h2>257</h2>
+                <p>Confirmed</p>
+            </div>
+        </div>
+
+        <!-- Pending -->
+        <div class="card">
+            <div class="icon orange">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div>
+                <h2>23</h2>
+                <p>Pending</p>
+            </div>
+        </div>
+
+        <!-- Cancelled -->
+        <div class="card">
+            <div class="icon red">
+                <i class="fas fa-times"></i>
+            </div>
+            <div>
+                <h2>14</h2>
+                <p>Cancelled</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+{% comment %} search for attendees, filter by event, etc. can be added here in the future. {% endcomment %}
+
+
+<div class="table-container">
+
+    <!-- Search Bar -->
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search attendees...">
+    </div>
+
+    <!-- Table -->
+    <table class="attendees-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Event</th>
+                <th>Status</th>
+                <th>RSVP Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <!-- Row -->
+            <tr>
+                <td class="name-cell">
+                    <div class="avatar">M</div>
+                    Maria Garcia
+                </td>
+                <td>maria@email.com</td>
+                <td>Community Yoga</td>
+                <td><span class="badge confirmed"><i class="fas fa-check"></i> Confirmed</span></td>
+                <td>Feb 20, 2026</td>
+                <td class="actions">
+                    <a href="#" class="approve">Approve</a>
+                    <a href="#" class="remove">Remove</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="name-cell">
+                    <div class="avatar">J</div>
+                    James Thompson
+                </td>
+                <td>james@email.com</td>
+                <td>Community Yoga</td>
+                <td><span class="badge confirmed"><i class="fas fa-check"></i> Confirmed</span></td>
+                <td>Feb 19, 2026</td>
+                <td class="actions">
+                    <a href="#" class="approve">Approve</a>
+                    <a href="#" class="remove">Remove</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="name-cell">
+                    <div class="avatar">L</div>
+                    Lin Wei
+                </td>
+                <td>lin@email.com</td>
+                <td>Local Artisan Market</td>
+                <td><span class="badge pending"><i class="fas fa-clock"></i> Pending</span></td>
+                <td>Feb 21, 2026</td>
+                <td class="actions">
+                    <a href="#" class="approve">Approve</a>
+                    <a href="#" class="remove">Remove</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="name-cell">
+                    <div class="avatar">A</div>
+                    Anna Petrov
+                </td>
+                <td>anna@email.com</td>
+                <td>Community Yoga</td>
+                <td><span class="badge cancelled"><i class="fas fa-times"></i> Cancelled</span></td>
+                <td>Feb 17, 2026</td>
+                <td class="actions">
+                    <a href="#" class="approve">Approve</a>
+                    <a href="#" class="remove">Remove</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+{% endblock %}
+
+

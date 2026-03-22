@@ -1,10 +1,119 @@
 {% extends 'localcommunity/businessowner/basebusiness.html' %}
-
-
-
-
 {% block content %}
+{% load static %}
 
-<h1>Analytics</h1>
+
+<div class="analytics-container">
+
+    <div class="analytics-header">
+        <div>
+            <h1>Analytics</h1>
+            <p>Track performance across all your businesses.</p>
+        </div>
+
+        <div class="analytics-filter">
+            <button>7 Days</button>
+            <button class="active">30 Days</button>
+            <button>90 Days</button>
+        </div>
+    </div>
+
+    <div class="analytics-cards">
+
+        <!-- Total Views -->
+        <div class="card">
+            <div class="card-top">
+                <div class="icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <span class="growth">↑ +18.2%</span>
+            </div>
+            <h2>12,480</h2>
+            <p>Total Views</p>
+        </div>
+
+        <!-- Visitors -->
+        <div class="card">
+            <div class="card-top">
+                <div class="icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <span class="growth">↑ +12.5%</span>
+            </div>
+            <h2>8,240</h2>
+            <p>Unique Visitors</p>
+        </div>
+
+        <!-- Reviews -->
+        <div class="card">
+            <div class="card-top">
+                <div class="icon">
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <span class="growth">↑ +8.3%</span>
+            </div>
+            <h2>213</h2>
+            <p>Reviews</p>
+        </div>
+
+        <!-- Inquiries -->
+        <div class="card">
+            <div class="card-top">
+                <div class="icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <span class="loss">↓ -3.1%</span>
+            </div>
+            <h2>28</h2>
+            <p>Inquiries</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% comment %} views over time graph and top performing businesses table would go here, but are omitted for brevity. {% endcomment %}
+
+<div class="views-card">
+
+    <h2 class="views-title">Views Over Time</h2>
+
+    <div class="views-data">
+
+        <div class="month-box">
+            <span class="number">820</span>
+            <span class="month">Aug</span>
+        </div>
+
+        <div class="month-box">
+            <span class="number">1050</span>
+            <span class="month">Sep</span>
+        </div>
+
+        <div class="month-box">
+            <span class="number">1340</span>
+            <span class="month">Oct</span>
+        </div>
+
+        <div class="month-box">
+            <span class="number">1120</span>
+            <span class="month">Nov</span>
+        </div>
+
+        <div class="month-box">
+            <span class="number">1580</span>
+            <span class="month">Dec</span>
+        </div>
+
+        <div class="month-box">
+            <span class="number">1890</span>
+            <span class="month">Jan</span>
+        </div>
+
+    </div>
+
+</div>
+
 
 {% endblock content %}

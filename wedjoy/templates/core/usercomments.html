@@ -1,0 +1,38 @@
+{% extends 'core/baseUserProfile.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1 style="margin-top:40px; margin-bottom:40px;">
+    <center> What’s Happening Around </center>
+</h1>
+
+<div class="glass-container" style="background: #ffffff">
+
+    <!-- FORM START -->
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="thought-box">
+
+            {{ form.content }}
+
+            <button type="submit" class="post-btn">Post</button>
+
+        </div>
+
+    </form>
+    <!-- FORM END -->
+
+
+    <!-- SHOW POSTS -->
+    {% for post in posts %}
+        <div class="post-card">
+            <p>{{ post.content }}</p>
+            <small>{{ post.created_at }}</small>
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

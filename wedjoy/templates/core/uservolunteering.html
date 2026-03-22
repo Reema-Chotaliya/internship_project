@@ -1,0 +1,60 @@
+{% extends 'core/baseUserProfile.html' %}
+
+
+
+
+{% block content %}
+{% load static %}
+
+<h1 style="margin-top:40px; margin-bottom:40px;"><center> Volunteerings Participations </center> </h1>
+
+
+    <!-- Table -->
+    <table class="attendees-table">
+        <thead>
+            <tr>
+                <th>Oppotunities</th>
+                <th>Email</th>
+                <th>Locations</th>
+                <th>Dates</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <!-- Row -->
+            <tr>
+                <td class="name-cell">
+                    <div class="avatar">M</div>
+                    Maria Garcia
+                </td>
+                <td>maria@email.com</td>
+                <td>Community Yoga</td>
+                <td>Feb 20, 2026</td>
+                <td class="actions">
+                    <a href="#" class="edit">Edit</a>
+                    <a href="#" class="cancel">Cancel</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="name-cell">
+                    <div class="avatar">J</div>
+                    James Thompson
+                </td>
+                <td>james@email.com</td>
+                <td>Community Yoga</td>
+                <td>Feb 19, 2026</td>
+                <td class="actions">
+                    <a href="#" class="edit">Edit</a>
+                    <a href="#" class="cancel">Cancel</a>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+{% endblock content %}

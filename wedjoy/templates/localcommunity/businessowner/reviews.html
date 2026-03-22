@@ -1,10 +1,83 @@
 {% extends 'localcommunity/businessowner/basebusiness.html' %}
-
-
-
-
 {% block content %}
+{% load static %}
 
-<h1>reviews </h1>
+<div class="reviews-container">
+
+    <div class="reviews-header">
+        <h1>Reviews</h1>
+        <p>Monitor and respond to customer feedback.</p>
+    </div>
+
+    <!-- Review Stats -->
+    <div class="review-stats">
+
+        <div class="stat-box">
+            <h2>213</h2>
+            <p>Total Reviews</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>4.7 ⭐</h2>
+            <p>Average Rating</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>18</h2>
+            <p>This Month</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>7</h2>
+            <p>Unreplied</p>
+        </div>
+
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="review-filters">
+
+        <button class="active">All Reviews</button>
+        <button style="color:#ffffff;">Critical (≤3★)</button>
+
+    </div>
+
+
+    <!-- Review Card -->
+
+    <div class="review-card">
+
+        <div class="review-avatar">
+            M
+        </div>
+
+        <div class="review-content">
+
+            <div class="review-top">
+
+                <div>
+                    <strong>Maria G.</strong>
+                    <span class="stars">★★★★★</span>
+                </div>
+
+                <span class="review-time">2 hours ago</span>
+
+            </div>
+
+            <p class="review-text">
+                Amazing bakery! The fresh bread is to die for. Best in the neighborhood.
+            </p>
+
+            <p class="business-name">
+                Golden Crust Bakery
+            </p>
+
+
+        </div>
+
+    </div>
+
+</div>
+
 
 {% endblock content %}
