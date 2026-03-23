@@ -85,3 +85,17 @@ class UserPost(models.Model):
 
     def __str__(self):
         return self.content[:100]
+    
+    
+    
+    
+# -----  contact us footer ------
+class Contact(models.Model):
+    email = models.EmailField()
+    location = models.CharField(max_length=200)
+    phone = models.CharField(max_length=15)
+    created_at = models.DateTimeField(auto_now_add=True,null=True)
+
+    def __str__(self):
+        return self.email    # repesent email into text 
+    

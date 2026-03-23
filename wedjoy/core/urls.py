@@ -14,4 +14,6 @@ urlpatterns = [
     path('usersecurity/',views.usersecurity, name='usersecurity'),
     path('userupdateprofile/',views.userupdateprofile, name='userupdateprofile'),
     
+    # -- footer --
+    path('contactus/',views.contactus, name='contactus'),
 ]

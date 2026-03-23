@@ -173,7 +173,7 @@ def settingsevent(request):
 
             return redirect('localcommunity:eventstudiodashboard')
 
-        else:
+        else:       
             print(form.errors)
 
     else:

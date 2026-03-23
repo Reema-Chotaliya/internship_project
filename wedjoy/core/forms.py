@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-from .models import User, UserPost
+from .models import User, UserPost, Contact
 from django import forms
 
 class UserSignupForm(UserCreationForm):
@@ -66,4 +66,17 @@ class UserPostForm(forms.ModelForm):
                 'placeholder': "Drop what’s happening around you...",
                 'class': 'form-control'
             })
+        }
+        
+        
+        
+# ------ contact us ------
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['email', 'location', 'phone']
+        widgets = {
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'location': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
         }

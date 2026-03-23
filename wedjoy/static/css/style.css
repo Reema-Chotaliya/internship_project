@@ -1571,3 +1571,97 @@ neww css */
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+
+/* --- contact us page ---- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e8d3c7;
+}
+
+/* MAIN CONTAINER */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    background-color: #f6f2ef;
+    margin: 40px;
+    border-radius: 10px;
+    margin-top: 200px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+    width: 45%;
+}
+
+.contact-left h1 {
+    font-size: 42px;
+    color: #7a3e2b;
+    margin-bottom: 10px;
+}
+
+.contact-left h4 {
+    margin-bottom: 15px;
+}
+
+.contact-left p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+/* RIGHT SIDE */
+.contact-right {
+    width: 50%;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+/* BUTTON */
+button {
+    background-color:  #4B0F12;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+button:hover {
+    background-color: #4B0F12;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+    }
+}

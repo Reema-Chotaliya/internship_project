@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import role_required
 from django.contrib import messages
-from .forms import UserSignupForm, UserLoginForm, UserUpdateProfile, UserPasswordChangeForm,  UserPostForm
+from .forms import UserSignupForm, UserLoginForm, UserUpdateProfile, UserPasswordChangeForm,  UserPostForm, ContactForm
 from django.contrib.auth import update_session_auth_hash, logout
 from .models import UserPost
 
@@ -148,4 +148,21 @@ def usersecurity(request):
 
     return render(request, "core/usersecurity.html", {"form": form})
     
+
+
+
+
+# -------  contact us page -------
+def contactus(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('contactus')
+    else:
+        form = ContactForm()
+    messages.success(request, "Form submitted successfully!")
+
+    return render(request, 'core/contactus.html', {'form': form})
 
