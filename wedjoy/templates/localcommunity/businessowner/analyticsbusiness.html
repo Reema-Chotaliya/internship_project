@@ -12,9 +12,9 @@
         </div>
 
         <div class="analytics-filter">
-            <button>7 Days</button>
-            <button class="active">30 Days</button>
-            <button>90 Days</button>
+            <a href="?range=7" class="btn{% if selected_range == 7 %} active{% endif %}">7 Days</a>
+            <a href="?range=30" class="btn{% if selected_range == 30 %} active{% endif %}">30 Days</a>
+            <a href="?range=90" class="btn{% if selected_range == 90 %} active{% endif %}">90 Days</a>
         </div>
     </div>
 
@@ -26,9 +26,9 @@
                 <div class="icon">
                     <i class="fa-solid fa-eye"></i>
                 </div>
-                <span class="growth">↑ +18.2%</span>
+                <span class="growth">{% if views_growth >= 0 %}↑ +{{ views_growth }}%{% else %}↓ {{ views_growth }}%{% endif %}</span>
             </div>
-            <h2>12,480</h2>
+            <h2>{{ total_views|default:"0" }}</h2>
             <p>Total Views</p>
         </div>
 
@@ -40,7 +40,7 @@
                 </div>
                 <span class="growth">↑ +12.5%</span>
             </div>
-            <h2>8,240</h2>
+            <h2>{{ unique_visitors|default:"0" }}</h2>
             <p>Unique Visitors</p>
         </div>
 
@@ -50,9 +50,9 @@
                 <div class="icon">
                     <i class="fa-regular fa-star"></i>
                 </div>
-                <span class="growth">↑ +8.3%</span>
+                <span class="growth">{% if reviews_growth >= 0 %}↑ +{{ reviews_growth }}%{% else %}↓ {{ reviews_growth }}%{% endif %}</span>
             </div>
-            <h2>213</h2>
+            <h2>{{ total_reviews|default:"0" }}</h2>
             <p>Reviews</p>
         </div>
 
@@ -62,9 +62,9 @@
                 <div class="icon">
                     <i class="fa-solid fa-chart-line"></i>
                 </div>
-                <span class="loss">↓ -3.1%</span>
+                <span class="{% if inquiries_growth >= 0 %}growth{% else %}loss{% endif %}">{% if inquiries_growth >= 0 %}↑ +{{ inquiries_growth }}%{% else %}↓ {{ inquiries_growth }}%{% endif %}</span>
             </div>
-            <h2>28</h2>
+            <h2>{{ total_inquiries|default:"0" }}</h2>
             <p>Inquiries</p>
         </div>
 
@@ -72,48 +72,70 @@
 
 </div>
 
-
-{% comment %} views over time graph and top performing businesses table would go here, but are omitted for brevity. {% endcomment %}
-
+<!-- Views Over Time Graph -->
 <div class="views-card">
 
     <h2 class="views-title">Views Over Time</h2>
 
-    <div class="views-data">
-
-        <div class="month-box">
-            <span class="number">820</span>
-            <span class="month">Aug</span>
-        </div>
-
-        <div class="month-box">
-            <span class="number">1050</span>
-            <span class="month">Sep</span>
-        </div>
-
-        <div class="month-box">
-            <span class="number">1340</span>
-            <span class="month">Oct</span>
-        </div>
-
-        <div class="month-box">
-            <span class="number">1120</span>
-            <span class="month">Nov</span>
-        </div>
-
-        <div class="month-box">
-            <span class="number">1580</span>
-            <span class="month">Dec</span>
-        </div>
-
-        <div class="month-box">
-            <span class="number">1890</span>
-            <span class="month">Jan</span>
-        </div>
-
+    <div style="position: relative; height: 300px; margin-top: 30px;">
+        <canvas id="viewsChart"></canvas>
     </div>
 
 </div>
 
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const chartLabels = {{ chart_labels|safe }};
+        const chartValues = {{ chart_values|safe }};
+
+        const ctx = document.getElementById('viewsChart').getContext('2d');
+        const viewsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartLabels,
+                datasets: [{
+                    label: 'Views',
+                    data: chartValues,
+                    borderColor: '#4A90E2',
+                    backgroundColor: 'rgba(74, 144, 226, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#4A90E2',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 7,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 2000,
+                        ticks: {
+                            stepSize: 200,
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
 
 {% endblock content %}
+

@@ -25,5 +25,8 @@ urlpatterns = [
     # path('analyticsevent/', views.analyticsevent, name='analyticsevent'),
     path('settingsevent/', views.settingsevent, name='settingsevent'),
     path('logoutevent/', views.logoutevent, name='logoutevent'),
-    
+
+    # My Businesses actions
+    path('edit_business/<int:business_id>/', views.edit_business, name='edit_business'),
+    path('delete_business/<int:business_id>/', views.delete_business, name='delete_business'),
 ]

@@ -1,4 +1,5 @@
 {% extends 'localcommunity/businessowner/basebusiness.html' %}
+{% load humanize %}
 
 {% block content %}
 
@@ -10,8 +11,8 @@
             <i class="fa-solid fa-eye stat-icon"></i>
             <p>Total Views</p>
         </div>
-        <h2>12,480</h2>
-        <span class="growth">+18%</span>
+        <h2>{{ total_views }}</h2>
+        <span class="growth">&nbsp;</span>
     </div>
 
     <div class="stat-card">
@@ -19,8 +20,8 @@
             <i class="fa-solid fa-store stat-icon"></i>
             <p>Active Listings</p>
         </div>
-        <h2>3</h2>
-        <span class="growth">+1</span>
+        <h2>{{ active_listings }}</h2>
+        <span class="growth">&nbsp;</span>
     </div>
 
     <div class="stat-card">
@@ -28,8 +29,8 @@
             <i class="fa-solid fa-star stat-icon"></i>
             <p>Avg Rating</p>
         </div>
-        <h2>4.7</h2>
-        <span class="growth">+0.2</span>
+        <h2>{{ avg_rating }}</h2>
+        <span class="growth">&nbsp;</span>
     </div>
 
     <div class="stat-card">
@@ -37,8 +38,8 @@
             <i class="fa-solid fa-envelope stat-icon"></i>
             <p>Inquiries</p>
         </div>
-        <h2>28</h2>
-        <span class="growth">+5</span>
+        <h2>{{ inquiries_count }}</h2>
+        <span class="growth">&nbsp;</span>
     </div>
 
 </section>
@@ -55,32 +56,24 @@
             <a href="#">View All →</a>
         </div>
 
-        <div class="review-card">
-            <div class="review-avatar">M</div>
-                <div class="review-content">
-                    <strong>Maria G.</strong> ⭐⭐⭐⭐⭐
-                    <p>Amazing bakery! The fresh bread is to die for.</p>
-                    <small>Golden Crust Bakery · 2h ago</small>
+        {% if recent_reviews %}
+            {% for review in recent_reviews %}
+                <div class="review-card">
+                    <div class="review-avatar">{{ review.user.firstName|default:review.user.username|slice:":1"|upper }}</div>
+                    <div class="review-content">
+                        <strong>{{ review.user.firstName|default:review.user.username }} {{ review.user.lastName }}</strong> {{ review.star_rating }}
+                        <p>{{ review.review_text }}</p>
+                        <small>{{ review.business.business_name }} · {{ review.created_at|naturaltime }}</small>
+                    </div>
                 </div>
-        </div>
-
-        <div class="review-card">
-            <div class="review-avatar">J</div>
-        <div class="review-content">
-            <strong>James T.</strong> ⭐⭐⭐⭐☆
-            <p>Great service, friendly staff. Will come back.</p>
-            <small>Metro Fitness · 5h ago</small>
-        </div>
-    </div>
-
-    <div class="review-card">
-        <div class="review-avatar">L</div>
-        <div class="review-content">
-            <strong>Lin W.</strong> ⭐⭐⭐⭐⭐
-            <p>Best coffee in the neighborhood, hands down.</p>
-            <small>Golden Crust Bakery · 1d ago</small>
-        </div>
-    </div>
+            {% endfor %}
+        {% else %}
+            <div class="review-card">
+                <div class="review-content">
+                    <p>No reviews available yet.</p>
+                </div>
+            </div>
+        {% endif %}
 </div>
 
             <!-- Quick Actions -->

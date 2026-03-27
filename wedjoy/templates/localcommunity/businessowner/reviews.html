@@ -13,22 +13,22 @@
     <div class="review-stats">
 
         <div class="stat-box">
-            <h2>213</h2>
+            <h2>{{ total_reviews }}</h2>
             <p>Total Reviews</p>
         </div>
 
         <div class="stat-box">
-            <h2>4.7 ⭐</h2>
+            <h2>{{ avg_rating }} ⭐</h2>
             <p>Average Rating</p>
         </div>
 
         <div class="stat-box">
-            <h2>18</h2>
+            <h2>{{ reviews_this_month }}</h2>
             <p>This Month</p>
         </div>
 
         <div class="stat-box">
-            <h2>7</h2>
+            <h2>{{ unreplied_count }}</h2>
             <p>Unreplied</p>
         </div>
 
@@ -37,45 +37,53 @@
     <!-- Filter Buttons -->
     <div class="review-filters">
 
-        <button class="active">All Reviews</button>
-        <button style="color:#ffffff;">Critical (≤3★)</button>
+        <a href="?filter=all" class="btn{% if filter_type == 'all' %} active{% endif %}">All Reviews</a>
+        <a href="?filter=critical" class="btn{% if filter_type == 'critical' %} active{% endif %}" style="color:#000000;">Critical (≤3★)</a>
 
     </div>
 
 
-    <!-- Review Card -->
+    <!-- Review Cards -->
+    {% if recent_reviews %}
+        {% for review in recent_reviews %}
+            <div class="review-card">
 
-    <div class="review-card">
-
-        <div class="review-avatar">
-            M
-        </div>
-
-        <div class="review-content">
-
-            <div class="review-top">
-
-                <div>
-                    <strong>Maria G.</strong>
-                    <span class="stars">★★★★★</span>
+                <div class="review-avatar">
+                    {{ review.user.first_name|default:review.user.username|slice:":1"|upper }}
                 </div>
 
-                <span class="review-time">2 hours ago</span>
+                <div class="review-content">
+
+                    <div class="review-top">
+
+                        <div>
+                            <strong>{{ review.user.first_name|default:review.user.username }} {{ review.user.last_name }}</strong>
+                            <span class="stars">{{ review.star_rating }}</span>
+                        </div>
+
+                        <span class="review-time">{{ review.created_at|timesince }} ago</span>
+
+                    </div>
+
+                    <p class="review-text">
+                        {{ review.review_text }}
+                    </p>
+
+                    <p class="business-name">
+                        {{ review.business.business_name }}
+                    </p>
+
+                </div>
 
             </div>
-
-            <p class="review-text">
-                Amazing bakery! The fresh bread is to die for. Best in the neighborhood.
-            </p>
-
-            <p class="business-name">
-                Golden Crust Bakery
-            </p>
-
-
+        {% endfor %}
+    {% else %}
+        <div class="review-card">
+            <div class="review-content">
+                <p>No reviews yet.</p>
+            </div>
         </div>
-
-    </div>
+    {% endif %}
 
 </div>
 
