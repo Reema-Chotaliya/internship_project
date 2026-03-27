@@ -6,6 +6,11 @@ from django.contrib import messages
 from .decorators import role_required
 from .forms import OwnerProfileUpdateForm , EventProfileUpdateForm
 
+from django.shortcuts import render
+from django.db.models.functions import TruncMonth
+from django.db.models import Count
+from events.models import EventRegistration
+
 
 # ================= DASHBOARDS =================
 
@@ -131,8 +136,51 @@ def attendeesevent(request):
     return render(request, "localcommunity/eventstudio/attendeesevent.html")
 
 
-def analyticsevent(request):
-    return render(request, "localcommunity/eventstudio/analyticsbusiness.html")
+# def analyticsevent(request):
+
+#     # ---------------- DASHBOARD COUNTS ----------------
+#     total_rsvps = EventRegistration.objects.filter(status='registered').count()
+
+#     total_events = EventRegistration.objects.values('event').distinct().count()
+
+#     attended = EventRegistration.objects.filter(status='attended').count()
+
+#     avg_attendance = (attended / total_rsvps * 100) if total_rsvps > 0 else 0
+
+
+#     # ---------------- MONTHLY CHART ----------------
+#     data = EventRegistration.objects.annotate(
+#         month=TruncMonth('registration_date')
+#     ).values('month').annotate(
+#         total=Count('id')
+#     ).order_by('month')
+
+#     months = []
+#     counts = []
+
+#     for d in data:
+#         months.append(d['month'].strftime('%b'))  # Jan, Feb
+#         counts.append(d['total'])
+
+
+#     # ---------------- EVENT PERFORMANCE ----------------
+#     from events.models import Event
+
+#     events = Event.objects.annotate(
+#         rsvp_count=Count('eventregistration')
+#     )
+
+
+#     return render(request, 'localcommunity/eventstudio/analyticsbusiness.html', {
+#         'total_rsvps': total_rsvps,
+#         'total_events': total_events,
+#         'avg_attendance': round(avg_attendance, 2),
+
+#         'months': months,
+#         'counts': counts,
+#         'events': events
+#     })
+
 
 @login_required
 @role_required(allowed_roles=["event_organizer"])
