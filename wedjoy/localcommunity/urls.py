@@ -21,6 +21,7 @@ urlpatterns = [
     path('myevents/', views.myevents, name='myevents'), 
     path('createevent/', views.createevent, name='createevent'),
     path('attendeesevent/', views.attendeesevent, name='attendeesevent'),
+    path('export-attendees/', views.export_attendees, name='export_attendees'),
     # path('analyticsevent/', views.analyticsevent, name='analyticsevent'),
     path('settingsevent/', views.settingsevent, name='settingsevent'),
     path('logoutevent/', views.logoutevent, name='logoutevent'),
